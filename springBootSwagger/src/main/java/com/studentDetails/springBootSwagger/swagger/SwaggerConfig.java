@@ -16,7 +16,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.student.demo.controller")).paths(regex("/api/v/1/.*"))
+				.apis(RequestHandlerSelectors.basePackage("com.studentDetails.springBootSwagger")).paths(regex("/api/v/1/.*"))
 				.build().apiInfo(metaData());
 	}
 
