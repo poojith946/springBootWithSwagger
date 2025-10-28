@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,15 +24,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping(path = "/api/v/1")
+@RequestMapping(path = "/api/v1")
 public class StudentController {
 
 	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
-	@Autowired
-	private StudentService studentService;
 
-	@Autowired
-	private MessageSource messageSource;
+    private final StudentService studentService;
+
+    private final MessageSource messageSource;
+
+    public StudentController(StudentService studentService, MessageSource messageSource) {
+        this.studentService = studentService;
+        this.messageSource = messageSource;
+    }
 
 	@GetMapping("/student")
 	public List<Student> retrieveAllStudents() {
