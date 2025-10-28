@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.studentDetails</groupId>
-	<artifactId>springBootSwagger</artifactId>
+	<artifactId>student-crud-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springBootSwagger</name>
 	<description>Spring Boot</description>
